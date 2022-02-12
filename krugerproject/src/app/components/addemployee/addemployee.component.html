@@ -1,0 +1,23 @@
+<form (ngSubmit)="createUser()" autocomplete="off"  [formGroup]="addEmployee">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Cedula</label>
+      <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Cedula" formControlName="dni">
+      <span class="alert-danger" *ngIf="isValid('dni')">Cédula inválida</span>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Nombre</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nombre" formControlName="username">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Apellido</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido" formControlName="lastname" >
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Correo</label>
+        <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="Correo" formControlName="email" >
+        <span class="alert-danger" *ngIf="isValid('email')">Correo inválido</span>  
+    </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="addEmployee.invalid">Guardar</button>
+  </form>
+ 

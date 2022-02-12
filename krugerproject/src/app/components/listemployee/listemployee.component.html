@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col">
+    <div class="for-group">
+        <input type="text" class="form-control" placeholder="buscar" name="searchVaccine" [(ngModel)]="searchVaccine">
+
+    </div>
+
+    </div>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Vacuna</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of (employees | search:searchVaccine)">
+        <th scope="row">{{employee.id}}</th>
+        <td>{{employee.nombre}}</td>
+        <td>{{employee.apellido}}</td>
+        <td>{{employee.vaccine}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
